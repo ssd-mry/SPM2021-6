@@ -1,0 +1,305 @@
+# npm resolution error report
+
+2021-05-20T12:41:52.008Z
+
+Found: eslint@4.19.1
+node_modules/eslint
+  dev eslint@"^5.16.0" from the root project
+  optional eslint@"^4.19.1" from @vue/cli-plugin-eslint@3.12.1
+  node_modules/@vue/cli-plugin-eslint
+    dev @vue/cli-plugin-eslint@"^3.12.0" from the root project
+  peer eslint@">= 4.12.1" from babel-eslint@10.1.0
+  node_modules/babel-eslint
+    dev babel-eslint@"^10.0.1" from the root project
+    babel-eslint@"^10.0.1" from @vue/cli-plugin-eslint@3.12.1
+    node_modules/@vue/cli-plugin-eslint
+      dev @vue/cli-plugin-eslint@"^3.12.0" from the root project
+  peer eslint@">=1.6.0 <7.0.0" from eslint-loader@2.2.1
+  node_modules/eslint-loader
+    eslint-loader@"^2.1.2" from @vue/cli-plugin-eslint@3.12.1
+    node_modules/@vue/cli-plugin-eslint
+      dev @vue/cli-plugin-eslint@"^3.12.0" from the root project
+  peer eslint@"^3.18.0 || ^4.0.0" from eslint-plugin-vue@4.7.1
+  node_modules/eslint-plugin-vue
+    dev eslint-plugin-vue@"^5.0.0" from the root project
+    optional eslint-plugin-vue@"^4.7.1" from @vue/cli-plugin-eslint@3.12.1
+    node_modules/@vue/cli-plugin-eslint
+      dev @vue/cli-plugin-eslint@"^3.12.0" from the root project
+  peer eslint@">=3.9.0" from vue-eslint-parser@2.0.3
+  node_modules/vue-eslint-parser
+    vue-eslint-parser@"^2.0.3" from eslint-plugin-vue@4.7.1
+    node_modules/eslint-plugin-vue
+      dev eslint-plugin-vue@"^5.0.0" from the root project
+      optional eslint-plugin-vue@"^4.7.1" from @vue/cli-plugin-eslint@3.12.1
+      node_modules/@vue/cli-plugin-eslint
+        dev @vue/cli-plugin-eslint@"^3.12.0" from the root project
+
+Could not resolve dependency:
+dev @vue/eslint-config-prettier@"^5.0.0" from the root project
+
+Conflicting peer dependency: eslint@5.16.0
+node_modules/eslint
+  peer eslint@">= 5.0.0" from @vue/eslint-config-prettier@5.1.0
+  node_modules/@vue/eslint-config-prettier
+    dev @vue/eslint-config-prettier@"^5.0.0" from the root project
+
+Fix the upstream dependency conflict, or retry
+this command with --force, or --legacy-peer-deps
+to accept an incorrect (and potentially broken) dependency resolution.
+
+Raw JSON explanation object:
+
+{
+  "code": "ERESOLVE",
+  "current": {
+    "name": "eslint",
+    "version": "4.19.1",
+    "location": "node_modules/eslint",
+    "dependents": [
+      {
+        "type": "dev",
+        "name": "eslint",
+        "spec": "^5.16.0",
+        "error": "INVALID",
+        "from": {
+          "location": "F:\\大三下\\软件项目管理\\ProjectManagement\\实践\\SPM2021-6\\spm2021-6-frontend"
+        }
+      },
+      {
+        "type": "optional",
+        "name": "eslint",
+        "spec": "^4.19.1",
+        "from": {
+          "name": "@vue/cli-plugin-eslint",
+          "version": "3.12.1",
+          "location": "node_modules/@vue/cli-plugin-eslint",
+          "dependents": [
+            {
+              "type": "dev",
+              "name": "@vue/cli-plugin-eslint",
+              "spec": "^3.12.0",
+              "from": {
+                "location": "F:\\大三下\\软件项目管理\\ProjectManagement\\实践\\SPM2021-6\\spm2021-6-frontend"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "peer",
+        "name": "eslint",
+        "spec": ">= 4.12.1",
+        "from": {
+          "name": "babel-eslint",
+          "version": "10.1.0",
+          "location": "node_modules/babel-eslint",
+          "dependents": [
+            {
+              "type": "dev",
+              "name": "babel-eslint",
+              "spec": "^10.0.1",
+              "from": {
+                "location": "F:\\大三下\\软件项目管理\\ProjectManagement\\实践\\SPM2021-6\\spm2021-6-frontend"
+              }
+            },
+            {
+              "type": "prod",
+              "name": "babel-eslint",
+              "spec": "^10.0.1",
+              "from": {
+                "name": "@vue/cli-plugin-eslint",
+                "version": "3.12.1",
+                "location": "node_modules/@vue/cli-plugin-eslint",
+                "dependents": [
+                  {
+                    "type": "dev",
+                    "name": "@vue/cli-plugin-eslint",
+                    "spec": "^3.12.0",
+                    "from": {
+                      "location": "F:\\大三下\\软件项目管理\\ProjectManagement\\实践\\SPM2021-6\\spm2021-6-frontend"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "peer",
+        "name": "eslint",
+        "spec": ">=1.6.0 <7.0.0",
+        "from": {
+          "name": "eslint-loader",
+          "version": "2.2.1",
+          "location": "node_modules/eslint-loader",
+          "dependents": [
+            {
+              "type": "prod",
+              "name": "eslint-loader",
+              "spec": "^2.1.2",
+              "from": {
+                "name": "@vue/cli-plugin-eslint",
+                "version": "3.12.1",
+                "location": "node_modules/@vue/cli-plugin-eslint",
+                "dependents": [
+                  {
+                    "type": "dev",
+                    "name": "@vue/cli-plugin-eslint",
+                    "spec": "^3.12.0",
+                    "from": {
+                      "location": "F:\\大三下\\软件项目管理\\ProjectManagement\\实践\\SPM2021-6\\spm2021-6-frontend"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "peer",
+        "name": "eslint",
+        "spec": "^3.18.0 || ^4.0.0",
+        "from": {
+          "name": "eslint-plugin-vue",
+          "version": "4.7.1",
+          "location": "node_modules/eslint-plugin-vue",
+          "dependents": [
+            {
+              "type": "dev",
+              "name": "eslint-plugin-vue",
+              "spec": "^5.0.0",
+              "error": "INVALID",
+              "from": {
+                "location": "F:\\大三下\\软件项目管理\\ProjectManagement\\实践\\SPM2021-6\\spm2021-6-frontend"
+              }
+            },
+            {
+              "type": "optional",
+              "name": "eslint-plugin-vue",
+              "spec": "^4.7.1",
+              "from": {
+                "name": "@vue/cli-plugin-eslint",
+                "version": "3.12.1",
+                "location": "node_modules/@vue/cli-plugin-eslint",
+                "dependents": [
+                  {
+                    "type": "dev",
+                    "name": "@vue/cli-plugin-eslint",
+                    "spec": "^3.12.0",
+                    "from": {
+                      "location": "F:\\大三下\\软件项目管理\\ProjectManagement\\实践\\SPM2021-6\\spm2021-6-frontend"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "peer",
+        "name": "eslint",
+        "spec": ">=3.9.0",
+        "from": {
+          "name": "vue-eslint-parser",
+          "version": "2.0.3",
+          "location": "node_modules/vue-eslint-parser",
+          "dependents": [
+            {
+              "type": "prod",
+              "name": "vue-eslint-parser",
+              "spec": "^2.0.3",
+              "from": {
+                "name": "eslint-plugin-vue",
+                "version": "4.7.1",
+                "location": "node_modules/eslint-plugin-vue",
+                "dependents": [
+                  {
+                    "type": "dev",
+                    "name": "eslint-plugin-vue",
+                    "spec": "^5.0.0",
+                    "error": "INVALID",
+                    "from": {
+                      "location": "F:\\大三下\\软件项目管理\\ProjectManagement\\实践\\SPM2021-6\\spm2021-6-frontend"
+                    }
+                  },
+                  {
+                    "type": "optional",
+                    "name": "eslint-plugin-vue",
+                    "spec": "^4.7.1",
+                    "from": {
+                      "name": "@vue/cli-plugin-eslint",
+                      "version": "3.12.1",
+                      "location": "node_modules/@vue/cli-plugin-eslint",
+                      "dependents": [
+                        {
+                          "type": "dev",
+                          "name": "@vue/cli-plugin-eslint",
+                          "spec": "^3.12.0",
+                          "from": {
+                            "location": "F:\\大三下\\软件项目管理\\ProjectManagement\\实践\\SPM2021-6\\spm2021-6-frontend"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "currentEdge": null,
+  "edge": {
+    "type": "dev",
+    "name": "@vue/eslint-config-prettier",
+    "spec": "^5.0.0",
+    "error": "MISSING",
+    "from": {
+      "location": "F:\\大三下\\软件项目管理\\ProjectManagement\\实践\\SPM2021-6\\spm2021-6-frontend"
+    }
+  },
+  "peerConflict": {
+    "name": "eslint",
+    "version": "5.16.0",
+    "whileInstalling": {
+      "name": "spm2021-6-frontend",
+      "version": "0.1.0",
+      "path": "F:\\大三下\\软件项目管理\\ProjectManagement\\实践\\SPM2021-6\\spm2021-6-frontend"
+    },
+    "location": "node_modules/eslint",
+    "dependents": [
+      {
+        "type": "peer",
+        "name": "eslint",
+        "spec": ">= 5.0.0",
+        "from": {
+          "name": "@vue/eslint-config-prettier",
+          "version": "5.1.0",
+          "whileInstalling": {
+            "name": "spm2021-6-frontend",
+            "version": "0.1.0",
+            "path": "F:\\大三下\\软件项目管理\\ProjectManagement\\实践\\SPM2021-6\\spm2021-6-frontend"
+          },
+          "location": "node_modules/@vue/eslint-config-prettier",
+          "dependents": [
+            {
+              "type": "dev",
+              "name": "@vue/eslint-config-prettier",
+              "spec": "^5.0.0",
+              "from": {
+                "location": "F:\\大三下\\软件项目管理\\ProjectManagement\\实践\\SPM2021-6\\spm2021-6-frontend"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "strictPeerDeps": false,
+  "force": false
+}

@@ -1,0 +1,110 @@
+0 verbose cli [
+0 verbose cli   'C:\\Node\\node.exe',
+0 verbose cli   'C:\\Node\\node_global\\node_modules\\npm\\bin\\npm-cli.js',
+0 verbose cli   'install',
+0 verbose cli   '--loglevel',
+0 verbose cli   'error',
+0 verbose cli   '--registry=https://registry.npm.taobao.org',
+0 verbose cli   '--disturl=https://npm.taobao.org/dist',
+0 verbose cli   '--registry=https://registry.npm.taobao.org',
+0 verbose cli   '--disturl=https://npm.taobao.org/dist'
+0 verbose cli ]
+1 info using npm@7.11.1
+2 info using node@v14.16.1
+3 timing npm:load:whichnode Completed in 1ms
+4 timing config:load:defaults Completed in 1ms
+5 timing config:load:file:C:\Node\node_global\node_modules\npm\npmrc Completed in 2ms
+6 timing config:load:builtin Completed in 2ms
+7 timing config:load:cli Completed in 3ms
+8 timing config:load:env Completed in 1ms
+9 timing config:load:file:F:\大三下\软件项目管理\ProjectManagement\实践\SPM2021-6\spm2021-6-frontend\.npmrc Completed in 1ms
+10 timing config:load:project Completed in 1ms
+11 timing config:load:file:C:\Users\14832\.npmrc Completed in 1ms
+12 timing config:load:user Completed in 1ms
+13 timing config:load:file:C:\Node\node_global\etc\npmrc Completed in 0ms
+14 timing config:load:global Completed in 0ms
+15 timing config:load:validate Completed in 0ms
+16 timing config:load:credentials Completed in 1ms
+17 timing config:load:setEnvs Completed in 1ms
+18 timing config:load Completed in 11ms
+19 timing npm:load:configload Completed in 11ms
+20 timing npm:load:setTitle Completed in 1ms
+21 timing npm:load:setupLog Completed in 1ms
+22 timing npm:load:cleanupLog Completed in 3ms
+23 timing npm:load:configScope Completed in 0ms
+24 timing npm:load:projectScope Completed in 1ms
+25 timing npm:load Completed in 20ms
+26 timing config:load:flatten Completed in 3ms
+27 timing arborist:ctor Completed in 1ms
+28 timing idealTree:init Completed in 605ms
+29 timing idealTree:userRequests Completed in 0ms
+30 silly idealTree buildDeps
+31 silly fetch manifest @vue/eslint-config-prettier@^5.0.0
+32 timing arborist:ctor Completed in 0ms
+33 http fetch GET 200 https://registry.npm.taobao.org/@vue%2feslint-config-prettier 509ms
+34 silly fetch manifest eslint@^5.16.0
+35 http fetch GET 304 https://registry.npm.taobao.org/eslint 36ms (from cache)
+36 silly fetch manifest eslint-plugin-prettier@^3.1.0
+37 http fetch GET 200 https://registry.npm.taobao.org/eslint-plugin-prettier 56ms
+38 silly fetch manifest prettier@^1.18.2
+39 http fetch GET 304 https://registry.npm.taobao.org/prettier 47ms (from cache)
+40 silly fetch manifest eslint-plugin-vue@^5.0.0
+41 http fetch GET 304 https://registry.npm.taobao.org/eslint-plugin-vue 40ms (from cache)
+42 silly fetch manifest less@^3.0.4
+43 http fetch GET 200 https://registry.npm.taobao.org/less 66ms
+44 silly fetch manifest less-loader@^5.0.0
+45 http fetch GET 200 https://registry.npm.taobao.org/less-loader 56ms
+46 silly fetch manifest webpack@^2.0.0 || ^3.0.0 || ^4.0.0
+47 http fetch GET 304 https://registry.npm.taobao.org/webpack 38ms (from cache)
+48 silly fetch manifest vue@^2.6.10
+49 http fetch GET 200 https://registry.npm.taobao.org/vue 80ms
+50 silly fetch manifest vue-router@^3.0.3
+51 http fetch GET 200 https://registry.npm.taobao.org/vue-router 47ms
+52 silly fetch manifest vuex@^3.0.1
+53 http fetch GET 200 https://registry.npm.taobao.org/vuex 45ms
+54 timing idealTree Completed in 1711ms
+55 timing command:install Completed in 1718ms
+56 notice New minor version of npm available! 7.11.1 -> 7.13.0
+56 notice Changelog: https://github.com/npm/cli/releases/tag/v7.13.0
+56 notice Run npm install -g npm@7.13.0 to update!
+57 verbose stack Error: unable to resolve dependency tree
+57 verbose stack     at Arborist.[failPeerConflict] (C:\Node\node_global\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:1220:25)
+57 verbose stack     at Arborist.[placeDep] (C:\Node\node_global\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:1323:32)
+57 verbose stack     at C:\Node\node_global\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:904:46
+57 verbose stack     at Array.map (<anonymous>)
+57 verbose stack     at Arborist.[buildDepStep] (C:\Node\node_global\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:904:8)
+57 verbose stack     at async Arborist.buildIdealTree (C:\Node\node_global\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:217:7)
+57 verbose stack     at async Promise.all (index 1)
+57 verbose stack     at async Arborist.reify (C:\Node\node_global\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\reify.js:135:5)
+57 verbose stack     at async Install.install (C:\Node\node_global\node_modules\npm\lib\install.js:137:5)
+58 verbose cwd F:\大三下\软件项目管理\ProjectManagement\实践\SPM2021-6\spm2021-6-frontend
+59 verbose Windows_NT 10.0.19042
+60 verbose argv "C:\\Node\\node.exe" "C:\\Node\\node_global\\node_modules\\npm\\bin\\npm-cli.js" "install" "--loglevel" "error" "--registry=https://registry.npm.taobao.org" "--disturl=https://npm.taobao.org/dist" "--registry=https://registry.npm.taobao.org" "--disturl=https://npm.taobao.org/dist"
+61 verbose node v14.16.1
+62 verbose npm  v7.11.1
+63 error code ERESOLVE
+64 error ERESOLVE unable to resolve dependency tree
+65 error
+66 error Found: eslint@4.19.1
+66 error node_modules/eslint
+66 error   dev eslint@"^5.16.0" from the root project
+66 error   optional eslint@"^4.19.1" from @vue/cli-plugin-eslint@3.12.1
+66 error   node_modules/@vue/cli-plugin-eslint
+66 error     dev @vue/cli-plugin-eslint@"^3.12.0" from the root project
+66 error   4 more (babel-eslint, eslint-loader, eslint-plugin-vue, vue-eslint-parser)
+66 error
+66 error Could not resolve dependency:
+66 error dev @vue/eslint-config-prettier@"^5.0.0" from the root project
+66 error
+66 error Conflicting peer dependency: eslint@5.16.0
+66 error node_modules/eslint
+66 error   peer eslint@">= 5.0.0" from @vue/eslint-config-prettier@5.1.0
+66 error   node_modules/@vue/eslint-config-prettier
+66 error     dev @vue/eslint-config-prettier@"^5.0.0" from the root project
+66 error
+66 error Fix the upstream dependency conflict, or retry
+66 error this command with --force, or --legacy-peer-deps
+66 error to accept an incorrect (and potentially broken) dependency resolution.
+66 error
+66 error See F:\大三下\软件项目管理\ProjectManagement\实践\SPM2021-6\spm2021-6-frontend\node_cache\eresolve-report.txt for a full report.
+67 verbose exit 1
