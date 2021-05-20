@@ -62,13 +62,14 @@
     background-color:#000000;
   }
   #background{
-    background:url("../assets/index_background.png") no-repeat;
+    background:url("../assets/index_background.jpg") no-repeat;
     background-size: 100% 100%;
     height: 100%;
     position: fixed;
     width: 100%;
     /*margin-left:-10px;*/
     margin-top: -200px;
+    margin-left: -20px;
     z-index: -10000;
   }
   .header{
