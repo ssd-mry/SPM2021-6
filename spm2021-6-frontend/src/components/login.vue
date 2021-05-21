@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <div id="app1">
         <div id="background"></div>
         <div class="elet">
             <el-container>
@@ -70,7 +70,7 @@
         width: 100%;
         /*margin-left:-10px;*/
         margin-top: -200px;
-        margin-left: -20px;
+        margin-left: -8px;
         z-index: -10000;
     }
 
@@ -87,7 +87,7 @@
 
     .login {
         width: 60%;
-        height: 500px;
+        height: 320px;
     }
 
     .banner2 {

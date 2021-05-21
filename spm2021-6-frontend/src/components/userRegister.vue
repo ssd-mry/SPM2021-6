@@ -1,43 +1,45 @@
 <template>
-    <div id="register">
-        <p class="title">用户注册</p>
-        <el-form
-                :model="ruleForm2"
-                status-icon
-                :rules="rules2"
-                ref="ruleForm2"
-                label-width="auto"
-                label-position="left"
-                class="demo-ruleForm"
-                size="mini"
-        >
-            <el-form-item label="姓名" prop="name">
-                <el-input prefix-icon="el-icon-s-custom" v-model="ruleForm2.name" auto-complete="off"
-                          placeholder="请输入真实姓名"></el-input>
-            </el-form-item>
-            <el-form-item prop="gender" label="性别" required>
-                <el-radio-group v-model="ruleForm2.gender">
-                    <el-radio label="男" value="male"></el-radio>
-                    <el-radio label="女" value="female"></el-radio>
-                </el-radio-group>
-            </el-form-item>
-            <el-form-item label="邮箱" prop="email">
-                <el-input prefix-icon="el-icon-message" v-model="ruleForm2.email" auto-complete="off"
-                          placeholder="请输入邮箱号"></el-input>
-            </el-form-item>
-            <el-form-item label="密码" prop="pass">
-                <el-input prefix-icon="el-icon-lock" type="password" v-model="ruleForm2.pass" auto-complete="off"
-                          placeholder="输入密码"></el-input>
-            </el-form-item>
-            <el-form-item label="确认密码" prop="checkPass">
-                <el-input prefix-icon="el-icon-lock" type="password" v-model="ruleForm2.checkPass"
-                          auto-complete="off" placeholder="确认密码"></el-input>
-            </el-form-item>
-            <el-form-item>
-                <el-button type="primary" @click="submitForm('ruleForm2')" style="width:100%;">用户注册</el-button>
-                <p class="login" @click="gotoLogin">已有账号？立即登录</p>
-            </el-form-item>
-        </el-form>
+    <div class="register-wrapper">
+        <div id="register">
+            <p class="title">用户注册</p>
+            <el-form
+                    :model="ruleForm2"
+                    status-icon
+                    :rules="rules2"
+                    ref="ruleForm2"
+                    label-width="auto"
+                    label-position="left"
+                    class="demo-ruleForm"
+                    size="mini"
+            >
+                <el-form-item label="姓名" prop="name">
+                    <el-input prefix-icon="el-icon-s-custom" v-model="ruleForm2.name" auto-complete="off"
+                              placeholder="请输入真实姓名"></el-input>
+                </el-form-item>
+                <el-form-item prop="gender" label="性别" required>
+                    <el-radio-group v-model="ruleForm2.gender">
+                        <el-radio label="男" value="male"></el-radio>
+                        <el-radio label="女" value="female"></el-radio>
+                    </el-radio-group>
+                </el-form-item>
+                <el-form-item label="邮箱" prop="email">
+                    <el-input prefix-icon="el-icon-message" v-model="ruleForm2.email" auto-complete="off"
+                              placeholder="请输入邮箱号"></el-input>
+                </el-form-item>
+                <el-form-item label="密码" prop="pass">
+                    <el-input prefix-icon="el-icon-lock" type="password" v-model="ruleForm2.pass" auto-complete="off"
+                              placeholder="输入密码"></el-input>
+                </el-form-item>
+                <el-form-item label="确认密码" prop="checkPass">
+                    <el-input prefix-icon="el-icon-lock" type="password" v-model="ruleForm2.checkPass"
+                              auto-complete="off" placeholder="确认密码"></el-input>
+                </el-form-item>
+                <el-form-item>
+                    <el-button type="primary" @click="submitForm('ruleForm2')" style="width:100%;">用户注册</el-button>
+                    <p class="login" @click="gotoLogin">已有账号？立即登录</p>
+                </el-form-item>
+            </el-form>
+        </div>
     </div>
 </template>
 
@@ -205,6 +207,8 @@
         right: 0;
         left: 0;
         bottom: 0;
+        background: url("../assets/index_background.jpg");
+        background-size: 100% 100%;
         /*        background: url('../assets/img/waterSoil/login_bkg.jpeg');*/
     }
 
