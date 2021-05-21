@@ -4,8 +4,8 @@
     <div class="elet">
       <el-container>
         <el-aside width="900px" class="banner">
-          <div id="banner1"><img src="../assets/banner1.png"></div>
-          <div class="banner2"><img src="../assets/banner2.png"></div>
+<!--          <div id="banner1"><img src="../assets/banner1.png"></div>-->
+          <div class="banner2"><img src="../assets/banner.png"></div>
         </el-aside>
         <el-container class="login">
           <el-header class="header">
