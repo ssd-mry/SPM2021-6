@@ -13,7 +13,9 @@
         <el-button type="primary" class="button" @click="handleClick('/menu')">登录</el-button>
       </el-row>
     </div>
-    <div class="word"><h5>初始密码为身份证号后六位</h5></div>
+    <div class="word"><h5></h5></div>
+
+
   </div>
 </template>
 
@@ -70,11 +72,13 @@
 
 <style scoped>
   .card{
+    position: fixed;
     color: #000000;
     width:280px;
     height:230px;
     background-color: #000000;
     opacity: 1;
+    align-items: center;
   }
   .form{
     display:flex;
@@ -90,12 +94,11 @@
     background-color:#00008B;
     border-color: #00008B;
     opacity: 1;
-
   }
   .word{
     color: white;
     margin-top: 5px;
-    margin-left: 50px;
+/*    margin-left: 50px;*/
   }
   .first{
     width: 200px;

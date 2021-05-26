@@ -4,15 +4,12 @@ import Home from './views/Home.vue'
 import login from "./components/login";
 import login_user from './components/login_user'
 import login_Administrator from './components/login_Administrator'
+import userRegister from "./components/userRegister";
+
 Vue.use(Router)
 
 export default new Router({
   routes: [
-/*    {
-      path: '/',
-      name: 'home',
-      component: Home
-    },*/
     {
       path: '/',
       name: 'login',
@@ -25,8 +22,13 @@ export default new Router({
         {
           path: 'login_Administrator',
           component: login_Administrator
-        }
+        },
       ]
+    },
+    {
+      path: '/userRegister',
+      name: 'userRegister',
+      component: userRegister
     },
     {
       path: '/about',

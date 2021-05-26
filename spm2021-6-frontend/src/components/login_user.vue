@@ -2,7 +2,7 @@
   <div class="card">
     <el-form class="form" ref="LoginInfo">
       <img src="../assets/me.png" height="30px" width="30px" class="me">
-      <el-input placeholder="职工号" width="100px" class="first" v-model="item.input"></el-input>
+      <el-input placeholder="请输入账号" width="100px" class="first" v-model="item.input"></el-input>
     </el-form>
     <div class="form">
       <img src="../assets/password.png" height="30px" width="30px" class="me">
@@ -14,7 +14,7 @@
       </el-row>
     </div>
 
-    <div class="word"><h5>初始密码为身份证号后六位</h5></div>
+    <div class="word"><router-link  to="/userRegister" class="word">没有账号？点我注册</router-link></div>
   </div>
 </template>
 
@@ -72,11 +72,13 @@
 
 <style scoped>
   .card {
+    position: fixed;
     color: #000000;
     width: 280px;
     height: 200px;
     background-color: #000000;
     opacity: 1;
+    align-items: center;
   }
 
   .form {
@@ -100,8 +102,9 @@
 
   .word {
     color: white;
-    margin-top: 5px;
-    margin-left: 50px;
+    margin-top: 8px;
+    margin-left: -4px;
+    /*margin-left: 50px;*/
   }
 
   .first {
