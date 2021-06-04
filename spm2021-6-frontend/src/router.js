@@ -5,6 +5,8 @@ import login from "./components/login";
 import login_user from './components/login_user'
 import login_Administrator from './components/login_Administrator'
 import userRegister from "./components/userRegister";
+import map from "./components/map";
+import showTable from "./components/showTable";
 
 Vue.use(Router)
 
@@ -29,6 +31,16 @@ export default new Router({
       path: '/userRegister',
       name: 'userRegister',
       component: userRegister
+    },
+    {
+      path: '/map',
+      name: 'map',
+      component: map
+    },
+    {
+      path: '/showTable',
+      name: 'showTable',
+      component: showTable
     },
     {
       path: '/about',
