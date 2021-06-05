@@ -1,10 +1,17 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+//import Home from './views/Home.vue'
 import login from "./components/login";
 import login_user from './components/login_user'
 import login_Administrator from './components/login_Administrator'
 import userRegister from "./components/userRegister";
+import showTableMenu from "./components/showTableMenu";
+import basicshock from "./components/basicshock";
+import housedestory from "./components/housedestory";
+import lifeline from "./components/lifeline";
+import peopleinjured from "./components/peopleinjured";
+import prediction from "./components/prediction";
+import secondarydisaster from "./components/secondarydisaster";
 
 Vue.use(Router)
 
@@ -31,12 +38,50 @@ export default new Router({
       component: userRegister
     },
     {
+      path: '/showTableMenu',
+      name: 'showTableMenu',
+      component: showTableMenu,
+      redirect:'/showTableMenu/basicshock',
+      children: [
+        {
+          path: 'basicshock',
+          name: 'basicshock',
+          component: basicshock
+        },
+        {
+          path: 'housedestory',
+          name: 'housedestory',
+          component: housedestory
+        },
+        {
+          path: 'lifeline',
+          name: 'lifeline',
+          component: lifeline
+        },
+        {
+          path: 'peopleinjured',
+          name: 'peopleinjured',
+          component: peopleinjured
+        },
+        {
+          path: 'prediction',
+          name: 'prediction',
+          component: prediction
+        },
+        {
+          path: 'secondarydisaster',
+          name: 'secondarydisaster',
+          component: secondarydisaster
+        },
+      ]
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      //component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     }
   ]
 })
