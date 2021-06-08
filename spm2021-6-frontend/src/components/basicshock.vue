@@ -1,4 +1,6 @@
-  <template>
+
+
+<template>
     <div id="basicshock">
       <el-table
         :data="tableData"
@@ -88,156 +90,156 @@
       "data"() {
         return {
           "tableData": [
-            {
-              location: 'Sichuan',
-              date: '2016-05-02',
-              epi_lon:'111',
-              epi_lat:'222',
-              mag:'5',
-              no:'1231243514355',
-              picture:'',
-              ReportingUnit:'上报单位1'
-            },
-            {
-              location: 'Beijing',
-              date: '2016-05-04',
-              epi_lon:'444',
-              epi_lat:'555',
-              mag:'2',
-              no:'1231243514352',
-              picture:'',
-              ReportingUnit:'上报单位2'
-            },
-            {
-              location: 'Xinjang',
-              date: '2018-01-02',
-              epi_lon:'112',
-              epi_lat:'223',
-              mag:'4',
-              no:'1231243514354',
-              picture:'',
-              ReportingUnit:'上报单位3'
-            },
-            {
-              location: 'Sichuan',
-              date: '2016-05-02',
-              epi_lon:'111',
-              epi_lat:'222',
-              mag:'5',
-              no:'1231243514355',
-              picture:'',
-              ReportingUnit:'上报单位1'
-            },
-            {
-              location: 'Beijing',
-              date: '2016-05-04',
-              epi_lon:'444',
-              epi_lat:'555',
-              mag:'2',
-              no:'1231243514352',
-              picture:'',
-              ReportingUnit:'上报单位2'
-            },
-            {
-              location: 'Xinjang',
-              date: '2018-01-02',
-              epi_lon:'112',
-              epi_lat:'223',
-              mag:'4',
-              no:'1231243514354',
-              picture:'',
-              ReportingUnit:'上报单位3'
-            },
-            {
-              location: 'Sichuan',
-              date: '2016-05-02',
-              epi_lon:'111',
-              epi_lat:'222',
-              mag:'5',
-              no:'1231243514355',
-              picture:'',
-              ReportingUnit:'上报单位1'
-            },
-            {
-              location: 'Beijing',
-              date: '2016-05-04',
-              epi_lon:'444',
-              epi_lat:'555',
-              mag:'2',
-              no:'1231243514352',
-              picture:'',
-              ReportingUnit:'上报单位2'
-            },
-            {
-              location: 'Xinjang',
-              date: '2018-01-02',
-              epi_lon:'112',
-              epi_lat:'223',
-              mag:'4',
-              no:'1231243514354',
-              picture:'',
-              ReportingUnit:'上报单位3'
-            },
-            {
-              location: 'Sichuan',
-              date: '2016-05-02',
-              epi_lon:'111',
-              epi_lat:'222',
-              mag:'5',
-              no:'1231243514355',
-              picture:'',
-              ReportingUnit:'上报单位1'
-            },
-            {
-              location: 'Beijing',
-              date: '2016-05-04',
-              epi_lon:'444',
-              epi_lat:'555',
-              mag:'2',
-              no:'1231243514352',
-              picture:'',
-              ReportingUnit:'上报单位2'
-            },
-            {
-              location: 'Xinjang',
-              date: '2018-01-02',
-              epi_lon:'112',
-              epi_lat:'223',
-              mag:'4',
-              no:'1231243514354',
-              picture:'',
-              ReportingUnit:'上报单位3'
-            },
-            {
-              location: 'Sichuan',
-              date: '2016-05-02',
-              epi_lon:'111',
-              epi_lat:'222',
-              mag:'5',
-              no:'1231243514355',
-              picture:'',
-              ReportingUnit:'上报单位1'
-            },
-            {
-              location: 'Beijing',
-              date: '2016-05-04',
-              epi_lon:'444',
-              epi_lat:'555',
-              mag:'2',
-              no:'1231243514352',
-              picture:'',
-              ReportingUnit:'上报单位2'
-            },
-            {
-              location: 'Xinjang',
-              date: '2018-01-02',
-              epi_lon:'112',
-              epi_lat:'223',
-              mag:'4',
-              no:'1231243514354',
-              picture:'',
-              ReportingUnit:'上报单位3'
-            },
+            // {
+            //   location: 'Sichuan',
+            //   date: '2016-05-02',
+            //   epi_lon:'111',
+            //   epi_lat:'222',
+            //   mag:'5',
+            //   no:'1231243514355',
+            //   picture:'',
+            //   ReportingUnit:'上报单位1'
+            // },
+            // {
+            //   location: 'Beijing',
+            //   date: '2016-05-04',
+            //   epi_lon:'444',
+            //   epi_lat:'555',
+            //   mag:'2',
+            //   no:'1231243514352',
+            //   picture:'',
+            //   ReportingUnit:'上报单位2'
+            // },
+            // {
+            //   location: 'Xinjang',
+            //   date: '2018-01-02',
+            //   epi_lon:'112',
+            //   epi_lat:'223',
+            //   mag:'4',
+            //   no:'1231243514354',
+            //   picture:'',
+            //   ReportingUnit:'上报单位3'
+            // },
+            // {
+            //   location: 'Sichuan',
+            //   date: '2016-05-02',
+            //   epi_lon:'111',
+            //   epi_lat:'222',
+            //   mag:'5',
+            //   no:'1231243514355',
+            //   picture:'',
+            //   ReportingUnit:'上报单位1'
+            // },
+            // {
+            //   location: 'Beijing',
+            //   date: '2016-05-04',
+            //   epi_lon:'444',
+            //   epi_lat:'555',
+            //   mag:'2',
+            //   no:'1231243514352',
+            //   picture:'',
+            //   ReportingUnit:'上报单位2'
+            // },
+            // {
+            //   location: 'Xinjang',
+            //   date: '2018-01-02',
+            //   epi_lon:'112',
+            //   epi_lat:'223',
+            //   mag:'4',
+            //   no:'1231243514354',
+            //   picture:'',
+            //   ReportingUnit:'上报单位3'
+            // },
+            // {
+            //   location: 'Sichuan',
+            //   date: '2016-05-02',
+            //   epi_lon:'111',
+            //   epi_lat:'222',
+            //   mag:'5',
+            //   no:'1231243514355',
+            //   picture:'',
+            //   ReportingUnit:'上报单位1'
+            // },
+            // {
+            //   location: 'Beijing',
+            //   date: '2016-05-04',
+            //   epi_lon:'444',
+            //   epi_lat:'555',
+            //   mag:'2',
+            //   no:'1231243514352',
+            //   picture:'',
+            //   ReportingUnit:'上报单位2'
+            // },
+            // {
+            //   location: 'Xinjang',
+            //   date: '2018-01-02',
+            //   epi_lon:'112',
+            //   epi_lat:'223',
+            //   mag:'4',
+            //   no:'1231243514354',
+            //   picture:'',
+            //   ReportingUnit:'上报单位3'
+            // },
+            // {
+            //   location: 'Sichuan',
+            //   date: '2016-05-02',
+            //   epi_lon:'111',
+            //   epi_lat:'222',
+            //   mag:'5',
+            //   no:'1231243514355',
+            //   picture:'',
+            //   ReportingUnit:'上报单位1'
+            // },
+            // {
+            //   location: 'Beijing',
+            //   date: '2016-05-04',
+            //   epi_lon:'444',
+            //   epi_lat:'555',
+            //   mag:'2',
+            //   no:'1231243514352',
+            //   picture:'',
+            //   ReportingUnit:'上报单位2'
+            // },
+            // {
+            //   location: 'Xinjang',
+            //   date: '2018-01-02',
+            //   epi_lon:'112',
+            //   epi_lat:'223',
+            //   mag:'4',
+            //   no:'1231243514354',
+            //   picture:'',
+            //   ReportingUnit:'上报单位3'
+            // },
+            // {
+            //   location: 'Sichuan',
+            //   date: '2016-05-02',
+            //   epi_lon:'111',
+            //   epi_lat:'222',
+            //   mag:'5',
+            //   no:'1231243514355',
+            //   picture:'',
+            //   ReportingUnit:'上报单位1'
+            // },
+            // {
+            //   location: 'Beijing',
+            //   date: '2016-05-04',
+            //   epi_lon:'444',
+            //   epi_lat:'555',
+            //   mag:'2',
+            //   no:'1231243514352',
+            //   picture:'',
+            //   ReportingUnit:'上报单位2'
+            // },
+            // {
+            //   location: 'Xinjang',
+            //   date: '2018-01-02',
+            //   epi_lon:'112',
+            //   epi_lat:'223',
+            //   mag:'4',
+            //   no:'1231243514354',
+            //   picture:'',
+            //   ReportingUnit:'上报单位3'
+            // },
           ],
           currentRow: null
         }
@@ -261,30 +263,33 @@
         getRowKey(row) {
           return row.id
         },
-        // "getContent"(limit, page, email) { //传给后端的参数，要改！！！
-        //   var that = this;
-        //   this.tableData = [];
-        //   this.$axios({
-        //     "method": 'post',
-        //     "url": '/dataShare/download/findDownload', //访问后端的url，要改！！！
-        //     "contentType": 'application/json; charset=UTF-8', // 解决415错误
-        //     "headers": {'Content-Type': 'application/json;charset=UTF-8'},
-        //     "dataType": 'json',
-        //     "data": JSON.stringify({"page": page, "limit": limit, "email": email}) //传给后端的参数，要改！！！
-        //   }).then(res => { //后端返回数据
-        //     var string1 = res.data //储存数据
-        //     var dataNum = string1.length //储存数据条数
-        //     for (var i = 0; i < dataNum; i++) {
-        //       var objectToInsert = JSON.parse(string1[i]);
-        //       that.tableData.push(objectToInsert);
-        //     }
-        //     that.total = parseInt(that.tableData.pop())
-        //     console.log(that.tableData)
-        //   }).catch(error => {
-        //     alert(error)
-        //     console.log(error)
-        //   })
-        // }
+        getContent() { //传给后端的参数，要改！！！
+          var that = this;
+          this.tableData = [];
+          this.$axios({
+            method: 'post',
+            url: '/spm/data/dataSendBasicShock', //访问后端的url，要改！！！
+            contentType: 'application/json; charset=UTF-8', // 解决415错误
+            headers: {'Content-Type': 'application/json;charset=UTF-8'},
+            dataType: 'json',
+            //"data": JSON.stringify({}) //传给后端的参数，要改！！！
+          }).then(res => { //后端返回数据
+            var string1 = res.data //储存数据
+            var dataNum = string1.length //储存数据条数
+            for (var i = 0; i < dataNum; i++) {
+              var objectToInsert = JSON.parse(string1[i]);
+              that.tableData.push(objectToInsert);
+            }
+            that.total = parseInt(that.tableData.pop())
+            console.log(that.tableData)
+          }).catch(error => {
+            alert(error)
+            console.log(error)
+          })
+        }
+      },
+      mounted() {
+        this.getContent()
       }
     }
   </script>
