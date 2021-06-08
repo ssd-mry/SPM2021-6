@@ -41,7 +41,7 @@
         } else {
           this.$axios({
             method: 'post',
-            url: 'http://localhost:8080/user/login',
+            url: '/spm/user/commonLogin',
             //contentType: 'application/json;charset=UTF-8',
             contentType: 'application/json; charset=UTF-8',// 解决415错误
             headers:{'Content-Type':'application/json;charset=UTF-8'},
@@ -49,9 +49,6 @@
             data: JSON.stringify(submit),
             /*data: JSON.stringify({"input":"123","password":"123"})*/
           }).then(res => {
-            if(res.data === -1){
-              alert("该账号不存在或账号不满足管理员权限")
-            }
             if(res.data === -2){
               alert("账号密码不匹配")
             }
