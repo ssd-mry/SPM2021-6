@@ -111,7 +111,7 @@ export default {
           }
           this.$axios({
             method: 'post',
-            url: '/user/insertUser',
+            url: '/spm/user/insertUser',
             contentType: 'application/json; charset=UTF-8', // 解决415错误
             headers: {'Content-Type': 'application/json;charset=UTF-8'},
             dataType: 'json',
@@ -119,7 +119,7 @@ export default {
           }).then(res => { // 注意：后端需要返回userID
             if (res.data === 1) {
               alert('注册成功')
-              this.$router.push('/login')
+              this.$router.push('/')
             }
           }).catch(error => {
             alert(error)

@@ -11,7 +11,7 @@
         @row-click="clickRow" ref="basicshockTable"
         style="width: 100%"
         height="500"
-        max-height="500"
+        max-height="800"
         :default-sort = "{prop: 'date', order: 'descending'}">
         <el-table-column
           type="selection"
@@ -36,7 +36,7 @@
           prop="date"
           label="日期与时间"
           sortable
-          width="100">
+          width="180">
         </el-table-column>
         <el-table-column
           prop="epi_lon"
@@ -52,7 +52,7 @@
            prop="mag"
            label="震级"
            sortable
-           width="50">
+           width="90">
         </el-table-column>
         <el-table-column
            prop="picture"

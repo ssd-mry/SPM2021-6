@@ -10,7 +10,7 @@
     </div>
     <div>
       <el-row>
-        <el-button type="primary" class="button" v-on:click="handleClick('/menu')">登录</el-button>
+        <el-button type="primary" class="button" v-on:click="handleClick()">登录</el-button>
       </el-row>
     </div>
 
@@ -31,7 +31,7 @@
       }
     },
     methods: {
-      handleClick: function (Path) {
+      handleClick: function () {
         var submit = {  //JSON数据		名称-值对
           "input": this.item.input,
           "password": this.item.password

@@ -14,7 +14,7 @@
                                 mode="horizontal"
                                 router>
                             <el-menu-item index="0" @click="goTo('/')"> 普通用户登录</el-menu-item>
-                            <el-menu-item index="1" @click="goTo('/login_Administrator')">系统管理员登录</el-menu-item>
+                            <!--<el-menu-item index="1" @click="goTo('/login_Administrator')">系统管理员登录</el-menu-item>-->
                         </el-menu>
                     </el-header>
                     <el-main class="view">
