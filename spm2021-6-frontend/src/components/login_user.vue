@@ -54,7 +54,7 @@
             }
             if(res.data === 1){
               localStorage.setItem('userID', submit.input);
-              this.$router.push('/menu')
+              this.$router.push('/showTableMenu')
             }
           }).catch(error => {
             alert(error)

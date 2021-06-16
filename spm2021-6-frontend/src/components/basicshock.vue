@@ -272,7 +272,7 @@
             contentType: 'application/json; charset=UTF-8', // 解决415错误
             headers: {'Content-Type': 'application/json;charset=UTF-8'},
             dataType: 'json',
-            //"data": JSON.stringify({}) //传给后端的参数，要改！！！
+            data: JSON.stringify({}) //传给后端的参数，要改！！！
           }).then(res => { //后端返回数据
             var string1 = res.data //储存数据
             var dataNum = string1.length //储存数据条数
