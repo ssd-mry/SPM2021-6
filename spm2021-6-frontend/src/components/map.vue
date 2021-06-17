@@ -15,16 +15,18 @@
                 </el-button>
             </bm-control>
             <div v-for="(content, index) in points" :key="index">
-                <bm-marker :position="{lng:content.lng, lat: content.lat}" @click="infoWindowOpen(index)">
+                <bm-marker :position="{lng:content.longitude, lat: content.latitude}" @click="infoWindowOpen(index)">
                     <bm-info-window :show=content.show @close="infoWindowClose(index)" @open="infoWindowOpen(index)"
                                     style="white-space: pre-wrap;">
-                        经度：{{content.lng}}
+                        经度：{{content.longitude}}
                         <br/>
-                        维度：{{content.lat}}
+                        维度：{{content.latitude}}
                         <br/>
-                        震级：{{content.level}}
+                        震级：{{content.magnitude}}
                         <br/>
-                        发生时间：{{content.time}}
+                        发生时间：{{content.date}}
+                        <br/>
+                        发生地：{{content.location}}
                     </bm-info-window>
                 </bm-marker>
             </div>
@@ -65,8 +67,8 @@
         data() {
             return {
                 center: {lng: 0, lat: 0},
-                points: [{lng: 114.220941, lat: 22.690015, show: false, level: 5.3, time: '2021/6/16  20:17'},
-                    {lng: 90.220941, lat: 30.690015, show: false, level: 5.3, time: '2021/6/17  20:17'}],
+                points: [],/*{longitude: 114.220941, lat: 22.690015, show: false, level: 5.3, time: '2021/6/16  20:17'},
+                    {lng: 90.220941, lat: 30.690015, show: false, level: 5.3, time: '2021/6/17  20:17'}*/
                 zoom: 0,
                 dialogFormVisible: false,
                 filter: {
@@ -92,21 +94,24 @@
                 this.zoom = 5
             },
             addPoint() {
+                var that = this
                 var submit = {}
                 this.$axios({
                     method: 'post',
-                    url: '/spm/basicshock/Mapmsg',
+                    url: '/spm/data/Mapmsg',
                     contentType: 'application/json; charset=UTF-8', // 解决415错误
                     headers: {'Content-Type': 'application/json;charset=UTF-8'},
                     dataType: 'json',
                     data: JSON.stringify(submit)
                 }).then(res => { // 注意：后端需要返回userID
                     console.log(res.data)
-                    /*var dataNum = string1.length //储存数据条数
+                    var string1 = res.data // 储存数据
+                    var dataNum = string1.length // 储存数据条数
                     for(var i=0;i<dataNum;i++){
                         var objectToInsert = JSON.parse(string1[i]);
-                        that.blockContents.push(objectToInsert);
-                    }*/
+                        objectToInsert.show = false
+                        that.points.push(objectToInsert);
+                    }
                 }).catch(error => {
                     alert(error)
                     console.log(error)
@@ -136,7 +141,7 @@
                         }
                         this.$axios({
                             method: 'post',
-                            url: '/spm/basicshock/Mapmsg',
+                            url: '/spm/data/Mapmsg',
                             contentType: 'application/json; charset=UTF-8', // 解决415错误
                             headers: {'Content-Type': 'application/json;charset=UTF-8'},
                             dataType: 'json',
