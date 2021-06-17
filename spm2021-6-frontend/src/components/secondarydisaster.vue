@@ -16,10 +16,6 @@
           :reserve-selection="true"
           width="40">
       </el-table-column>
-      <!--        <el-table-column-->
-      <!--          type="index"-->
-      <!--          width="30">-->
-      <!--        </el-table-column>-->
       <el-table-column
           prop="sid"
           label=""
@@ -55,11 +51,6 @@
           sortable
           width="50">
       </el-table-column>
-<!--      <el-table-column-->
-<!--          prop="picture"-->
-<!--          label="图片"-->
-<!--          width="100">-->
-<!--      </el-table-column>-->
       <el-table-column
           prop="note"
           label="严重程度"
@@ -101,52 +92,7 @@ export default {
   "name": "secondarydisaster",
   "data"() {
     return {
-      "tableData": [
-        // {
-        //   location: 'Sichuan',
-        //   date: '2016-05-02',
-        //   type:'类型1',
-        //   status:'3',
-        //   picture:'',
-        //   note:'',
-        //   no:'1231243514355',
-        //   earthquakeId:'5',
-        //   ReportingUnit:'上报单位1'
-        // },
-        // {
-        //   location: 'Shanghai',
-        //   date: '2014-05-02',
-        //   type:'类型1',
-        //   status:'3',
-        //   picture:'',
-        //   note:'',
-        //   no:'1231243514354',
-        //   earthquakeId:'8',
-        //   ReportingUnit:'上报单位2'
-        // },
-        // {
-        //   location: 'Beijing',
-        //   date: '2016-06-02',
-        //   type:'类型1',
-        //   status:'3',
-        //   picture:'',
-        //   note:'这是注解',
-        //   no:'1231243514352',
-        //   earthquakeId:'1',
-        //   ReportingUnit:'上报单位6'
-        // },
-        // {
-        //   location: 'Sichuan',
-        //   date: '2016-05-02',
-        //   type:'类型1',
-        //   status:'3',
-        //   picture:'',
-        //   note:'',
-        //   no:'1231243514355',
-        //   earthquakeId:'5',
-        //   ReportingUnit:'上报单位1'
-        // },
-      ],
+      "tableData": [],
       currentRow: null
     }
   },
@@ -160,12 +106,6 @@ export default {
     clickRow(row){
       this.$refs.secondarydisasterTable.toggleRowSelection(row)
     },
-    // button1() {
-    //
-    // },
-    // button2() {
-    //
-    // },
     getRowKey(row) {
       return row.id
     },
@@ -188,6 +128,30 @@ export default {
         }
         that.total = parseInt(that.tableData.pop())
         console.log(that.tableData)
+      }).catch(error => {
+        alert(error)
+        console.log(error)
+      })
+    },
+    handleDelete(index, row) {
+      var submit = {
+        bid: row.bid,
+        type: '基本震情数据'
+      }
+      alert(row.bid)
+      this.$axios({
+        method: 'post',
+        url: '/spm/data/addData', // 需要修改
+        contentType: 'application/json; charset=UTF-8', // 解决415错误
+        headers: {'Content-Type': 'application/json;charset=UTF-8'},
+        dataType: 'json',
+        data: JSON.stringify(submit)
+      }).then(res => {
+        if (res.data === 'ok') {
+          this.$message.success("删除成功");
+        } else {
+          this.$message.success("删除失败");
+        }
       }).catch(error => {
         alert(error)
         console.log(error)

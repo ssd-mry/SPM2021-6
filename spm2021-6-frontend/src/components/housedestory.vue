@@ -182,6 +182,30 @@ export default {
         alert(error)
         console.log(error)
       })
+    },
+    handleDelete(index, row) {
+      var submit = {
+        bid: row.bid,
+        type: '基本震情数据'
+      }
+      alert(row.bid)
+      this.$axios({
+        method: 'post',
+        url: '/spm/data/addData', // 需要修改
+        contentType: 'application/json; charset=UTF-8', // 解决415错误
+        headers: {'Content-Type': 'application/json;charset=UTF-8'},
+        dataType: 'json',
+        data: JSON.stringify(submit)
+      }).then(res => {
+        if (res.data === 'ok') {
+          this.$message.success("删除成功");
+        } else {
+          this.$message.success("删除失败");
+        }
+      }).catch(error => {
+        alert(error)
+        console.log(error)
+      })
     }
   },
   mounted(){

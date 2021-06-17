@@ -1,79 +1,87 @@
 <template>
   <div id="basicshock">
     <el-table
-        :data="tableData"
-        :row-key="getRowKey"
-        stripe
-        border
-        highlight-current-row
-        @row-click="clickRow" ref="basicshockTable"
-        style="width: 100%"
-        height="500"
-        max-height="800"
-        :default-sort="{prop: 'date', order: 'descending'}">
+            :data="tableData"
+            :row-key="getRowKey"
+            stripe
+            border
+            highlight-current-row
+            @row-click="clickRow" ref="basicshockTable"
+            style="width: 100%"
+            height="500"
+            max-height="500"
+            :default-sort = "{prop: 'date', order: 'descending'}">
       <el-table-column
-          type="selection"
-          :reserve-selection="true"
-          width="40">
+              type="selection"
+              :reserve-selection="true"
+              width="40">
       </el-table-column>
       <!--        <el-table-column-->
       <!--          type="index"-->
       <!--          width="30">-->
       <!--        </el-table-column>-->
       <el-table-column
-          prop="no"
-          label="编码"
-          width="200">
+              prop="bid"
+              label=""
+              sortable
+              width="30">
       </el-table-column>
       <el-table-column
-          prop="location"
-          label="震源位置"
-          width="130">
+              prop="code"
+              label="编码"
+              sortable
+              width="30">
       </el-table-column>
       <el-table-column
-          prop="date"
-          label="日期与时间"
-          sortable
-          width="180">
+              prop="location"
+              label="震源位置"
+              width="200">
       </el-table-column>
       <el-table-column
-          prop="epi_lon"
-          label="经度"
-          width="100">
+              prop="date"
+              label="日期与时间"
+              sortable
+              width="200">
       </el-table-column>
       <el-table-column
-          prop="epi_lat"
-          label="纬度"
-          width="100">
+              prop="longitude"
+              label="经度"
+              sortable
+              width="100">
       </el-table-column>
       <el-table-column
-          prop="mag"
-          label="震级"
-          sortable
-          width="90">
+              prop="latitude"
+              label="纬度"
+              sortable
+              width="100">
       </el-table-column>
       <el-table-column
-          prop="picture"
-          label="图片"
-          width="100">
+              prop="magnitude"
+              label="震级"
+              sortable
+              width="50">
       </el-table-column>
       <el-table-column
-          prop="ReportingUnit"
-          label="上报单位"
-          width="200">
+              prop="depth"
+              label="深度"
+              sortable
+              width="50">
+      </el-table-column>
+      <el-table-column
+              prop="reportingunit"
+              label="上报单位"
+              width="200">
       </el-table-column>
       <el-table-column label="操作" width="150">
         <template slot-scope="scope">
           <el-button
-              size="mini"
-              type="success"
-              @click="handleEdit(scope.$index, scope.row)">编辑
-          </el-button>
+                  size="mini"
+                  type="success"
+                  @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
           <el-button
-              size="mini"
-              type="danger"
-              @click="handleDelete(scope.$index, scope.row)">删除
-          </el-button>
+                  size="mini"
+                  type="danger"
+                  @click="handleDelete(scope.$index, scope.row)">删除</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -192,7 +200,7 @@ export default {
         ],
       },
       formLabelWidth: '120px',
-      "tableData": [],
+      tableData: [],
       currentRow: null
     }
   },
@@ -287,6 +295,30 @@ export default {
       this.$refs['form2'].resetFields();
       this.$refs['form3'].resetFields();
       console.log(this.form)
+    },
+    handleDelete(index, row) {
+      var submit = {
+        bid: row.bid,
+        type: '基本震情数据'
+      }
+      alert(row.bid)
+      this.$axios({
+        method: 'post',
+        url: '/spm/data/addData', // 需要修改
+        contentType: 'application/json; charset=UTF-8', // 解决415错误
+        headers: {'Content-Type': 'application/json;charset=UTF-8'},
+        dataType: 'json',
+        data: JSON.stringify(submit)
+      }).then(res => {
+        if (res.data === 'ok') {
+          this.$message.success("删除成功");
+        } else {
+          this.$message.success("删除失败");
+        }
+      }).catch(error => {
+        alert(error)
+        console.log(error)
+      })
     }
   },
   mounted() {
