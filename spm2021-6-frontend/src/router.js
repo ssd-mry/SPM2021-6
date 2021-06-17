@@ -12,8 +12,12 @@ import lifeline from "./components/lifeline";
 import peopleinjured from "./components/peopleinjured";
 import prediction from "./components/prediction";
 import secondarydisaster from "./components/secondarydisaster";
+<<<<<<< Updated upstream
 import map from "./components/map";
 import exportData from "./components/exportData";
+=======
+import charts from "./components/charts";
+>>>>>>> Stashed changes
 
 Vue.use(Router)
 
@@ -86,6 +90,11 @@ export default new Router({
           component: exportData
         },
       ]
+    },
+    {
+      path: '/charts',
+      name: 'charts',
+      component: charts
     },
     {
       path: '/about',

@@ -21,33 +21,42 @@
       <!--          width="30">-->
       <!--        </el-table-column>-->
       <el-table-column
-          prop="no"
+          prop="pid"
+          label=""
+          sortable
+          width="30">
+      </el-table-column>
+      <el-table-column
+          prop="code"
           label="编码"
-          width="200">
+          sortable
+          width="30">
       </el-table-column>
       <el-table-column
           prop="location"
           label="人员伤亡位置"
-          width="130">
+          width="200">
       </el-table-column>
       <el-table-column
           prop="date"
           label="日期与时间"
           sortable
-          width="100">
+          width="200">
       </el-table-column>
       <el-table-column
           prop="number"
           label="伤亡人数"
+          sortable
           width="100">
       </el-table-column>
       <el-table-column
           prop="earthquakeId"
           label="地震编码"
-          width="100">
+          sortable
+          width="230">
       </el-table-column>
       <el-table-column
-          prop="ReportingUnit"
+          prop="reportingUnit"
           label="上报单位"
           width="200">
       </el-table-column>
@@ -77,46 +86,46 @@ export default {
   "data"() {
     return {
       "tableData": [
-        {
-          location: 'Beijing',
-          date: '2016-06-02',
-          number:'19',
-          no:'1231243514352',
-          earthquakeId:'1',
-          ReportingUnit:'上报单位6'
-        },
-        {
-          location: 'Beijing',
-          date: '2016-06-02',
-          number:'19',
-          no:'1231243514352',
-          earthquakeId:'1',
-          ReportingUnit:'上报单位6'
-        },
-        {
-          location: 'Beijing',
-          date: '2016-06-02',
-          number:'19',
-          no:'1231243514352',
-          earthquakeId:'1',
-          ReportingUnit:'上报单位6'
-        },
-        {
-          location: 'Beijing',
-          date: '2016-06-02',
-          number:'19',
-          no:'1231243514352',
-          earthquakeId:'1',
-          ReportingUnit:'上报单位6'
-        },
-        {
-          location: 'Beijing',
-          date: '2016-06-02',
-          number:'19',
-          no:'1231243514352',
-          earthquakeId:'1',
-          ReportingUnit:'上报单位6'
-        },
+        // {
+        //   location: 'Beijing',
+        //   date: '2016-06-02',
+        //   number:'19',
+        //   no:'1231243514352',
+        //   earthquakeId:'1',
+        //   ReportingUnit:'上报单位6'
+        // },
+        // {
+        //   location: 'Beijing',
+        //   date: '2016-06-02',
+        //   number:'19',
+        //   no:'1231243514352',
+        //   earthquakeId:'1',
+        //   ReportingUnit:'上报单位6'
+        // },
+        // {
+        //   location: 'Beijing',
+        //   date: '2016-06-02',
+        //   number:'19',
+        //   no:'1231243514352',
+        //   earthquakeId:'1',
+        //   ReportingUnit:'上报单位6'
+        // },
+        // {
+        //   location: 'Beijing',
+        //   date: '2016-06-02',
+        //   number:'19',
+        //   no:'1231243514352',
+        //   earthquakeId:'1',
+        //   ReportingUnit:'上报单位6'
+        // },
+        // {
+        //   location: 'Beijing',
+        //   date: '2016-06-02',
+        //   number:'19',
+        //   no:'1231243514352',
+        //   earthquakeId:'1',
+        //   ReportingUnit:'上报单位6'
+        // },
       ],
       currentRow: null
     }
@@ -140,30 +149,33 @@ export default {
     getRowKey(row) {
       return row.id
     },
-    // "getContent"(limit, page, email) { //传给后端的参数，要改！！！
-    //   var that = this;
-    //   this.tableData = [];
-    //   this.$axios({
-    //     "method": 'post',
-    //     "url": '/dataShare/download/findDownload', //访问后端的url，要改！！！
-    //     "contentType": 'application/json; charset=UTF-8', // 解决415错误
-    //     "headers": {'Content-Type': 'application/json;charset=UTF-8'},
-    //     "dataType": 'json',
-    //     "data": JSON.stringify({"page": page, "limit": limit, "email": email}) //传给后端的参数，要改！！！
-    //   }).then(res => { //后端返回数据
-    //     var string1 = res.data //储存数据
-    //     var dataNum = string1.length //储存数据条数
-    //     for (var i = 0; i < dataNum; i++) {
-    //       var objectToInsert = JSON.parse(string1[i]);
-    //       that.tableData.push(objectToInsert);
-    //     }
-    //     that.total = parseInt(that.tableData.pop())
-    //     console.log(that.tableData)
-    //   }).catch(error => {
-    //     alert(error)
-    //     console.log(error)
-    //   })
-    // }
+    getContent(param) { //传给后端的参数
+      var that = this;
+      this.tableData = [];
+      this.$axios({
+        "method": 'post',
+        "url": '/spm/data/dataSendPeopleInjured', //访问后端的url
+        "contentType": 'application/json; charset=UTF-8', // 解决415错误
+        "headers": {'Content-Type': 'application/json;charset=UTF-8'},
+        "dataType": 'json',
+        "data": JSON.stringify({param:null}) //传给后端的参数
+      }).then(res => { //后端返回数据
+        var string1 = res.data //储存数据
+        var dataNum = string1.length //储存数据条数
+        for (var i = 0; i < dataNum; i++) {
+          var objectToInsert = JSON.parse(string1[i]);
+          that.tableData.push(objectToInsert);
+        }
+        that.total = parseInt(that.tableData.pop())
+        console.log(that.tableData)
+      }).catch(error => {
+        alert(error)
+        console.log(error)
+      })
+    }
+  },
+  mounted() {
+    this.getContent()
   }
 }
 </script>
