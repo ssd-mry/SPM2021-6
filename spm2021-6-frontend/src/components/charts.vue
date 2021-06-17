@@ -40,35 +40,40 @@ export default {
     //   return currentdate;
     // },
     getContent(param) { //传给后端的参数
-      this.injuredNum=90;
-      this.missingNum=70;
-      this.deathNum=10;
-      this.deathNumArray=[10,20,30,40,50,60,70];
-      this.missingNumArray=[20,10,22,35,51,37,64];
-      this.injuredNumArray=[13,30,60,42,56,22,44];
-      this.dateArray=['2021-06-05', '2021-06-06', '2021-06-07', '2021-06-08', '2021-06-09', '2021-06-10', '2021-06-11'];
-      // var that = this;
-      // this.tableData = [];
-      // this.$axios({
-      //   method: 'post',
-      //   url: '/spm/data/chart', //访问后端的url
-      //   contentType: 'application/json; charset=UTF-8', // 解决415错误
-      //   headers: {'Content-Type': 'application/json;charset=UTF-8'},
-      //   dataType: 'json',
-      //   data: JSON.stringify({param:null}) //传给后端的参数
-      // }).then(res => { //后端返回数据
-      //   var string1 = res.data //储存数据
-      //   var dataNum = string1.length //储存数据条数
-      //   for (var i = 0; i < dataNum; i++) {
-      //     var objectToInsert = JSON.parse(string1[i]);
-      //     that.tableData.push(objectToInsert);
-      //   }
-      //   that.total = parseInt(that.tableData.pop())
-      //   console.log(that.tableData)
-      // }).catch(error => {
-      //   alert(error)
-      //   console.log(error)
-      // })
+      // this.injuredNum=90;
+      // this.missingNum=70;
+      // this.deathNum=10;
+      // this.injuredNumArray=[13,30,60,42,56,22,44];
+      // this.missingNumArray=[20,10,22,35,51,37,64];
+      // this.deathNumArray=[10,20,30,40,50,60,70];
+      // this.dateArray=['2021-06-05', '2021-06-06', '2021-06-07', '2021-06-08', '2021-06-09', '2021-06-10', '2021-06-11'];
+
+      var that = this;
+      this.$axios({
+        method: 'post',
+        url: '/spm/data/viewChart', //访问后端的url
+        contentType: 'application/json; charset=UTF-8', // 解决415错误
+        headers: {'Content-Type': 'application/json;charset=UTF-8'},
+        dataType: 'json',
+        data: JSON.stringify({param:null}) //传给后端的参数
+      }).then(res => { //后端返回数据
+        var string1 = res.data //储存数据
+        //变量赋值
+        this.injuredNum = JSON.parse(string1[0]);
+        this.missingNum = JSON.parse(string1[1]);
+        this.deathNum = JSON.parse(string1[2]);
+        for(var i=0;i<7;i++){
+          this.injuredNumArray[i] = JSON.parse(string1[i+3]);
+          this.missingNumArray[i] = JSON.parse(string1[i+10]);
+          this.deathNumArray[i] = JSON.parse(string1[i+17]);
+          this.dateArray[i] = JSON.parse(string1[i+24]);
+        }
+        console.log(string1);
+      }).catch(error => {
+        alert(error)
+        console.log(error)
+      })
+
     },
     initPieChart(){
       let chartDom = document.getElementById('pie');
