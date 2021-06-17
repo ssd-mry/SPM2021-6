@@ -12,6 +12,8 @@ import lifeline from "./components/lifeline";
 import peopleinjured from "./components/peopleinjured";
 import prediction from "./components/prediction";
 import secondarydisaster from "./components/secondarydisaster";
+import map from "./components/map";
+import exportData from "./components/exportData";
 
 Vue.use(Router)
 
@@ -72,6 +74,16 @@ export default new Router({
           path: 'secondarydisaster',
           name: 'secondarydisaster',
           component: secondarydisaster
+        },
+        {
+          path: 'map',
+          name: 'map',
+          component: map
+        },
+        {
+          path: 'exportData',
+          name: 'exportData',
+          component: exportData
         },
       ]
     },

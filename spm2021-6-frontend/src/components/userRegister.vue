@@ -99,7 +99,7 @@ export default {
     // <!--提交注册-->
     submitForm(formName) {
       var self = this
-      this.$refs[formName].validate(valid => {
+      this.$refs.formName.validate(valid => {
         if (valid) {
           var submit = {
             'name': this.ruleForm2.name,

@@ -36,6 +36,14 @@
             <i class="el-icon-document"></i>
             <span slot="title">二次灾情</span>
           </el-menu-item>
+          <el-menu-item index="/showTableMenu/map">
+            <i class="el-icon-document"></i>
+            <span slot="title">地图可视化</span>
+          </el-menu-item>
+          <el-menu-item index="/showTableMenu/exportData">
+            <i class="el-icon-document"></i>
+            <span slot="title">导出数据</span>
+          </el-menu-item>
         </el-menu>
       </el-col>
       <el-col :span="21">
